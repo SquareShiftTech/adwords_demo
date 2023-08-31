@@ -202,8 +202,6 @@ view: events {
     sql: CASE
           WHEN ${event_type} = 'Product'
             THEN SUBSTR(${full_page_url},LENGTH(${full_page_url})- (LENGTH(${full_page_url})-10),LENGTH(${full_page_url})-9)
-          ELSE
-            NULL
          END
        ;;
   }

@@ -769,10 +769,10 @@
     fields: [campaigns.campaign_name, adevents.total_cost, session_attribution.ROI,
       session_attribution.total_attribution]
     filters:
-      adevents.created_quarter: 2019-Q4
+    sessions.session_start_date: 3 months
     sorts: [adevents.total_cost desc 0, session_attribution.ROI desc]
     limit: 10
-    query_timezone: America/Los_Angeles
+    column_limit: 50
     show_view_names: false
     show_row_numbers: false
     transpose: false
@@ -791,28 +791,34 @@
     show_sql_query_menu_options: false
     show_totals: true
     show_row_totals: true
+    truncate_header: false
+    minimum_column_width: 75
     series_labels:
-      session_attribution.total_attribution: Revenue
+    session_attribution.total_attribution: Revenue
     series_column_widths:
-      campaigns.campaign_name: 237
-      adevents.total_cost: 113
-      session_attribution.ROI: 118
+    campaigns.campaign_name: 237
+    adevents.total_cost: 113
+    session_attribution.ROI: 118
     series_cell_visualizations:
-      adevents.total_cost:
-        is_active: false
-      session_attribution.ROI:
-        is_active: false
-    conditional_formatting: [{type: less than, value: 0, background_color: '', font_color: "#ff1225",
-        color_application: {collection_id: f14810d2-98d7-42df-82d0-bc185a074e42, palette_id: 90a81bec-f33f-43c9-a36a-0ea5f037dfa0,
-          options: {constraints: {min: {type: minimum}, mid: {type: number, value: 0},
-              max: {type: maximum}}, mirror: false, reverse: false, stepped: true}},
-        bold: false, italic: false, strikethrough: false, fields: [session_attribution.ROI]}]
+    adevents.total_cost:
+    is_active: false
+    session_attribution.ROI:
+    is_active: false
+    conditional_formatting: [{type: less than, value: 0, background_color: '', font_color: "#EA4335",
+      color_application: {collection_id: f14810d2-98d7-42df-82d0-bc185a074e42, palette_id: 90a81bec-f33f-43c9-a36a-0ea5f037dfa0,
+      options: {constraints: {min: {type: minimum}, mid: {type: number, value: 0},
+      max: {type: maximum}}, mirror: false, reverse: false, stepped: true}},
+      bold: false, italic: false, strikethrough: false, fields: [session_attribution.ROI]},
+    {type: along a scale..., value: !!null '', background_color: "#1A73E8", font_color: !!null '',
+      color_application: {collection_id: 7c56cc21-66e4-41c9-81ce-a60e1c3967b2, palette_id: 4a00499b-c0fe-4b15-a304-4083c07ff4c4,
+        options: {steps: 5, constraints: {min: {type: minimum}, mid: {type: number,
+              value: 0}, max: {type: maximum}}, mirror: true, reverse: false, stepped: false}},
+      bold: false, italic: false, strikethrough: false, fields: [session_attribution.total_attribution]}]
     series_value_format:
-      session_attribution.ROI:
-        name: percent_0
-        format_string: "#,##0%"
-        label: Percent (0)
-    series_types: {}
+    session_attribution.ROI:
+    name: percent_0
+    format_string: "#,##0%"
+    label: Percent (0)
     defaults_version: 1
     listen: {}
     row: 7
