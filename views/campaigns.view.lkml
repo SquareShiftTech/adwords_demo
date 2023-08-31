@@ -1,7 +1,7 @@
 view: campaigns {
 
 derived_table: {
-  datagroup_trigger: ecommerce_etl
+  datagroup_trigger: ecommerce_etl_modified
   sql: SELECT *
       FROM   looker-private-demo.ecomm.campaigns
       UNION ALL

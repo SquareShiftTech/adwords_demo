@@ -6,10 +6,11 @@ include: "*/*.view.lkml"         # include all views in this project
 include: "dashboards/*.dashboard.lookml"  # include all dashboards in this project
 
 
-datagroup: ecommerce_etl {
-  sql_trigger: SELECT max(id) FROM looker-private-demo.ecomm.events ;;
-  max_cache_age: "24 hours"}
-persist_with: ecommerce_etl
+datagroup: ecommerce_etl_modified {
+  sql_trigger: SELECT MAX(DATE(created_at)) FROM `bigquery-public-data.thelook_ecommerce.events` ;;
+  max_cache_age: "24 hours"
+}
+persist_with: ecommerce_etl_modified
 
 explore: events{
   label:  "(1) Digital Ads - Event Data"

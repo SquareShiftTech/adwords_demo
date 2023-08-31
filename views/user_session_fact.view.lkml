@@ -5,7 +5,7 @@ explore: user_session_fact {
 view: user_session_fact {
   derived_table: {
     publish_as_db_view: yes
-    datagroup_trigger: ecommerce_etl
+    datagroup_trigger: ecommerce_etl_modified
     explore_source: events {
       column: session_user_id { field: sessions.session_user_id }
       column: site_acquisition_ad_event_id { field: sessions.site_acquisition_ad_event_id }
