@@ -2,6 +2,7 @@ view: sessions {
   derived_table: {
     datagroup_trigger: ecommerce_etl_modified
     publish_as_db_view: yes
+    materialized_view: yes
     sql:
       SELECT
         row_number() over (partition by session_user_id order by session_end) as session_rank
