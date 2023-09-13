@@ -7,7 +7,7 @@ include: "dashboards/*.dashboard.lookml"  # include all dashboards in this proje
 
 
 datagroup: ecommerce_etl_modified {
-  sql_trigger: SELECT MAX(DATE(created_at)) FROM `bigquery-public-data.thelook_ecommerce.events` ;;
+  sql_trigger: SELECT MAX(DATE(created_at)) FROM `looker-private-demo.ecomm.events` ;;
   max_cache_age: "24 hours"
 }
 persist_with: ecommerce_etl_modified
