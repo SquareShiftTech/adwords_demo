@@ -65,7 +65,7 @@ view: users {
     tags: ["email"]
     link: {
       label: "User Lookup Dashboard"
-      url: "/dashboards/thelook_event::customer_lookup?Email={{ value | encode_uri }}"
+      url: "/dashboards/MDDG8M9Lvb1S2zq5UuhUND?Email={{ value | encode_uri }}"
       icon_url: "http://www.looker.com/favicon.ico"
     }
     action: {
