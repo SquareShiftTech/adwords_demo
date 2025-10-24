@@ -652,7 +652,7 @@
     name: First Touch to Last Touch Analysis
     model: thelook_adwords
     explore: events
-    type: marketplace_viz_sankey::sankey
+    type: marketplace_viz_sankey::sankey-marketplace
     fields: [user_session_fact.site_acquisition_source, sessions.traffic_source, session_purchase_facts.revenue]
     filters:
       user_session_fact.site_acquisition_source: "-NULL"
