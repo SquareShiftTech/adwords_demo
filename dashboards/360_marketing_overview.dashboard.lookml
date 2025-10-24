@@ -2,7 +2,7 @@
   title: 360 Marketing Overview
   layout: newspaper
   preferred_viewer: dashboards
-  query_timezone: user_timezone
+  # query_timezone: user_timezone
   elements:
   - title: Customer Trends
     name: Customer Trends
@@ -711,7 +711,7 @@
     sorts: [session_attribution.total_attribution desc, session_attribution.attribution_source]
     limit: 500
     column_limit: 50
-    query_timezone: user_timezone
+    # query_timezone: user_timezone
     value_labels: legend
     label_type: labPer
     x_axis_gridlines: false
